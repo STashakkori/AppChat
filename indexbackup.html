@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="A simple signin page for bee keeping users">
+		<meta name="author" content="Sina Tashakkori">
+		<link rel="stylesheet" type="text/css" href="./login.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js"></script>
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">-->
+	</head>
+	<body>
+		<!--<header><h1>AppChat</h1></header>
+		<div class="header">-->
+		<!--<h1> AppChat </h1>-->
+		<div class="container" id="wrap">
+			<h1> AppChat </h1>
+			<script>
+function validateCtrl($scope) {
+  $scope.email = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
+}
+</script>
+			<form class="form-signin" name="form" role="form" ng-controller="formCtrl" ng-submit="onSubmit()" >
+				<p id="header">Please Sign In<p>
+				<div id="input1">
+					<input type="username" name="username" type="text" class="form-control" placeholder="Username" ng-model="user.name" ng-model-options="{ updateOn: 'blur' }" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required> 
+				<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+				<span ng-show="form.username.$error.required">This field is require.</span>
+				<span ng-show="form.input1.username.$error.email">Not a valid email address.</span>
+				</div>
+				<br>
+				<div id="input2">
+					<input type="password" type="text" name="pssd" class="form-control" placeholder="Password" ng-model="user.pssd" required ng-model-options="{ updateOn: 'blur' }">
+				</div>
+<!--				 <pre>name = {{user.name}}</pre>
+				 <pre>pssd = {{user.pssd}}</pre>
+				 <tt>user.name.input.$valid = {{user.name.$valid}}</tt><br>
+				 <tt>user.name.input.$error = {{user.name.$error}}</tt><br>
+				 <tt>user.name.$valid = {{user.name.$valid}}</tt><br>
+				 <tt>user.name.$error.required = {{!!user.name.$error.required}}</tt><br>
+-->
+				<br>
+				<!--<script>
+					angular.module('formExample', [])
+					.controller('ExampleController', ['$scope', function($scope) {
+	  			      $scope.master = {};
+
+			      $scope.update = function(user) {
+				$scope.master = angular.copy(user);
+			      };
+
+			      $scope.reset = function() {
+				$scope.user = angular.copy($scope.master);
+			      };
+
+			      $scope.reset();
+			    }]);
+			</script>-->
+				<div id="submit">
+					<button class="btn btn-lg btn-primary btn-block" type="submit" id="submit" value="submit">Submit</button>
+				<!--<div id="spacer"></div>-->
+					<button class="btn btn-lg btn-primary btn-block" type="submit" id="signup">Sign Up</button>
+				</div>
+			</form>
+		</div>
+		<script>
+		/*function formCtrl($scope){
+		  $scope.onSubmit = function(){
+		    alert("form submitted");
+		  }
+		}
+		</script>
+	</body>
+	<!--<script>
+function validateCtrl($scope) {
+    $scope.user = 'John Doe';
+    $scope.email = 'john.doe@gmail.com';
+}-->
+</script>
+</html>
+
