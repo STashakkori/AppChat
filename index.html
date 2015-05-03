@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="A simple signin page for bee keeping users">
+		<meta name="author" content="Sina Tashakkori">
+		<link rel="stylesheet" type="text/css" href="./login.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js"></script>
+		<script src="https://cloud.github.com/downloads/javanto/civem.js/civem-0.0.7.min.js"></script>
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">-->
+	</head>
+	<body>
+		<!--<header><h1>AppChat</h1></header>
+		<div class="header">-->
+		<!--<h1> AppChat </h1>-->
+
+		<div ng-app class="container" id="wrap">
+			<h1> AppChat </h1>
+			<form class="form-signin" name="form" role="form"  ng-submit="onSubmit()" >
+				<p id="header">Please Sign In<p>
+				<div id="input1">
+					<input type="email" name="username" class="form-control" placeholder="Username" ng-model="user.name" ng-model-options="{ updateOn: 'blur' }" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" data-errormessage-value-type-mismatch="test123" data-errormessage-missing-value="testing" required > 
+<!--				<span style="color:red" ng-show="form.username.$error.pattern">This field is require.</span> -->
+<!--				<span style="color:#EB0202" ng-show="form.input1.username.$error.email">Not a valid email address.</span> -->
+				</div>
+				<br>
+				<div id="input2">
+					<input type="password" name="pssd" class="form-control" placeholder="Password" ng-model="user.pssd" required ng-model-options="{ updateOn: 'blur' }">
+				</div>
+<!--				 <pre>name = {{user.name}}</pre>
+				 <pre>pssd = {{user.pssd}}</pre>
+				 <tt>user.name.input.$valid = {{user.name.$valid}}</tt><br>
+				 <tt>user.name.input.$error = {{user.name.$error}}</tt><br>
+				 <tt>user.name.$valid = {{user.name.$valid}}</tt><br>
+				 <tt>user.name.$error.required = {{!!user.name.$error.required}}</tt><br>
+-->
+				<br>
+				<div id="submit" >
+					<input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit" id="submit">
+					<input class="btn btn-lg btn-primary btn-block" type="submit" id="signup" value="Sign Up">
+				</div>
+			</form>
+		</div>
+<!--		<script>
+		function formCtrl($scope){
+		  $scope.onSubmit = function(){
+		    alert("form submitted");
+		  }
+		}
+		</script>-->
+	</body>
+	<!--<script>
+function validateCtrl($scope) {
+    $scope.user = 'John Doe';
+    $scope.email = 'john.doe@gmail.com';
+}-->
+</script>
+</html>
+
